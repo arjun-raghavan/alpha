@@ -1,0 +1,297 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class-diagram version="1.2.3" icons="true" always-add-relationships="false" generalizations="true" realizations="true" 
+  associations="true" dependencies="false" nesting-relationships="true" router="FAN">  
+  <class id="1" language="java" name="com.perseverance.authorization.auth.JwtTokenUtil" 
+    project="spring-security-example" 
+    file="/spring-security-example/src/main/java/com/perseverance/springsecurityexample/auth/JwtTokenUtil.java" 
+    binary="false" corner="BOTTOM_RIGHT">    
+    <position height="279" width="275" x="1459" y="747"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <interface id="2" language="java" name="com.perseverance.authorization.repositories.RoleRepository" 
+    project="spring-security-example" 
+    file="/spring-security-example/src/main/java/com/perseverance/springsecurityexample/repositories/RoleRepository.java" 
+    binary="false" corner="BOTTOM_RIGHT">    
+    <position height="81" width="236" x="-15" y="19"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </interface>  
+  <class id="3" language="java" name="com.perseverance.authorization.model.Role" 
+    project="spring-security-example" 
+    file="/spring-security-example/src/main/java/com/perseverance/springsecurityexample/model/Role.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="189" width="213" x="261" y="747"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="4" language="java" name="com.perseverance.authorization.model.audit.DateAudit" 
+    project="spring-security-example" 
+    file="/spring-security-example/src/main/java/com/perseverance/springsecurityexample/model/audit/DateAudit.java" 
+    binary="false" corner="BOTTOM_RIGHT">    
+    <position height="207" width="236" x="261" y="19"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="5" language="java" name="com.perseverance.authorization.auth.JwtRequestFilter" 
+    project="spring-security-example" 
+    file="/spring-security-example/src/main/java/com/perseverance/springsecurityexample/auth/JwtRequestFilter.java" 
+    binary="false" corner="BOTTOM_RIGHT">    
+    <position height="117" width="378" x="1794" y="284"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <enumeration id="6" language="java" name="com.perseverance.authorization.model.RoleName" 
+    project="spring-security-example" 
+    file="/spring-security-example/src/main/java/com/perseverance/springsecurityexample/model/RoleName.java" 
+    binary="false" corner="BOTTOM_RIGHT">    
+    <position height="135" width="213" x="261" y="1066"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </enumeration>  
+  <class id="7" language="java" name="com.perseverance.authorization.model.User" 
+    project="spring-security-example" 
+    file="/spring-security-example/src/main/java/com/perseverance/springsecurityexample/model/User.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="423" width="213" x="261" y="284"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="8" language="java" name="com.perseverance.authorization.model.JwtResponse" 
+    project="spring-security-example" 
+    file="/spring-security-example/src/main/java/com/perseverance/springsecurityexample/model/JwtResponse.java" 
+    binary="false" corner="BOTTOM_RIGHT">    
+    <position height="135" width="213" x="537" y="19"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="9" language="java" name="com.perseverance.authorization.controller.JwtAuthenticationController" 
+    project="spring-security-example" 
+    file="/spring-security-example/src/main/java/com/perseverance/springsecurityexample/controller/JwtAuthenticationController.java" 
+    binary="false" corner="BOTTOM_RIGHT">    
+    <position height="153" width="316" x="1438" y="284"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="10" language="java" name="com.perseverance.authorization.model.JwtRequest" 
+    project="spring-security-example" 
+    file="/spring-security-example/src/main/java/com/perseverance/springsecurityexample/model/JwtRequest.java" 
+    binary="false" corner="BOTTOM_RIGHT">    
+    <position height="225" width="213" x="790" y="19"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="11" language="java" name="com.perseverance.authorization.configuration.H2Configuration" 
+    project="spring-security-example" 
+    file="/spring-security-example/src/main/java/com/perseverance/springsecurityexample/configuration/H2Configuration.java" 
+    binary="false" corner="BOTTOM_RIGHT">    
+    <position height="99" width="255" x="1043" y="19"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <interface id="12" language="java" name="com.perseverance.authorization.repositories.UserRepository" 
+    project="spring-security-example" 
+    file="/spring-security-example/src/main/java/com/perseverance/springsecurityexample/repositories/UserRepository.java" 
+    binary="false" corner="BOTTOM_RIGHT">    
+    <position height="171" width="286" x="1338" y="19"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </interface>  
+  <class id="13" language="java" name="com.perseverance.authorization.auth.JwtAuthenticationEntryPoint" 
+    project="spring-security-example" 
+    file="/spring-security-example/src/main/java/com/perseverance/springsecurityexample/auth/JwtAuthenticationEntryPoint.java" 
+    binary="false" corner="BOTTOM_RIGHT">    
+    <position height="117" width="426" x="2212" y="284"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="14" language="java" name="com.perseverance.authorization.configuration.WebSecurityConfig" 
+    project="spring-security-example" 
+    file="/spring-security-example/src/main/java/com/perseverance/springsecurityexample/configuration/WebSecurityConfig.java" 
+    binary="false" corner="BOTTOM_RIGHT">    
+    <position height="171" width="282" x="2212" y="19"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="15" language="java" name="com.perseverance.authorization.configuration.AuditingConfig" 
+    project="spring-security-example" 
+    file="/spring-security-example/src/main/java/com/perseverance/springsecurityexample/configuration/AuditingConfig.java" 
+    binary="false" corner="BOTTOM_RIGHT">    
+    <position height="81" width="242" x="1664" y="19"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="16" language="java" name="com.perseverance.authorization.controller.HelloWorldController" 
+    project="spring-security-example" 
+    file="/spring-security-example/src/main/java/com/perseverance/springsecurityexample/controller/HelloWorldController.java" 
+    binary="false" corner="BOTTOM_RIGHT">    
+    <position height="99" width="226" x="1946" y="19"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="17" language="java" name="com.perseverance.authorization.service.JwtUserDetailsService" 
+    project="spring-security-example" 
+    file="/spring-security-example/src/main/java/com/perseverance/springsecurityexample/service/JwtUserDetailsService.java" 
+    binary="false" corner="BOTTOM_RIGHT">    
+    <position height="99" width="225" x="1774" y="747"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <association id="18">    
+    <end type="SOURCE" refId="9" navigable="false">      
+      <attribute id="19" name="jwtTokenUtil">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </attribute>      
+      <multiplicity id="20" minimum="0" maximum="1">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </multiplicity>    
+    </end>    
+    <end type="TARGET" refId="1" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <generalization id="21">    
+    <end type="SOURCE" refId="7"/>    
+    <end type="TARGET" refId="4"/>  
+  </generalization>  
+  <association id="22">    
+    <end type="SOURCE" refId="5" navigable="false">      
+      <attribute id="23" name="jwtUserDetailsService">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </attribute>      
+      <multiplicity id="24" minimum="0" maximum="1">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </multiplicity>    
+    </end>    
+    <end type="TARGET" refId="17" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="25">    
+    <end type="SOURCE" refId="3" navigable="false">      
+      <attribute id="26" name="name">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </attribute>      
+      <multiplicity id="27" minimum="0" maximum="1">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </multiplicity>    
+    </end>    
+    <end type="TARGET" refId="6" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="28">    
+    <end type="SOURCE" refId="14" navigable="false">      
+      <attribute id="29" name="jwtAuthenticationEntryPoint">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </attribute>      
+      <multiplicity id="30" minimum="0" maximum="1">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </multiplicity>    
+    </end>    
+    <end type="TARGET" refId="13" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="31">    
+    <end type="SOURCE" refId="7" navigable="false">      
+      <attribute id="32" name="roles">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </attribute>      
+      <multiplicity id="33" minimum="0" maximum="2147483647">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </multiplicity>    
+    </end>    
+    <end type="TARGET" refId="3" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="34">    
+    <end type="SOURCE" refId="14" navigable="false">      
+      <attribute id="35" name="jwtRequestFilter">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </attribute>      
+      <multiplicity id="36" minimum="0" maximum="1">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </multiplicity>    
+    </end>    
+    <end type="TARGET" refId="5" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="37">    
+    <end type="SOURCE" refId="9" navigable="false">      
+      <attribute id="38" name="jwtUserDetailsService">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </attribute>      
+      <multiplicity id="39" minimum="0" maximum="1">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </multiplicity>    
+    </end>    
+    <end type="TARGET" refId="17" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="40">    
+    <end type="SOURCE" refId="5" navigable="false">      
+      <attribute id="41" name="jwtTokenUtil">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </attribute>      
+      <multiplicity id="42" minimum="0" maximum="1">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </multiplicity>    
+    </end>    
+    <end type="TARGET" refId="1" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <classifier-display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+    sort-features="false" accessors="true" visibility="true">    
+    <attributes public="true" package="true" protected="true" private="true" static="true"/>    
+    <operations public="true" package="true" protected="true" private="true" static="true"/>  
+  </classifier-display>  
+  <association-display labels="true" multiplicity="true"/>
+</class-diagram>
