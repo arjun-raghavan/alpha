@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-import SignInSide from "../signIn";
-import SignUp from "../signUp";
+import SignIn from "./signIn";
+import SignUp from "./signUp";
 import Button from "@material-ui/core/Button";
 import Grid from "@material-ui/core/Grid";
 import Link from "@material-ui/core/Link";
@@ -36,7 +36,7 @@ const useStyles = makeStyles(theme => ({
   }
 }));
 
-export default function MainPage() {
+export default function Login({ onTokenUpdate }) {
   const classes = useStyles();
 
   const [isSignInVisible, setIsSignInVisible] = useState(true);
@@ -45,7 +45,14 @@ export default function MainPage() {
     <Grid container component="main" className={classes.root}>
       <Grid item xs={false} sm={4} md={7} className={classes.image} />
       <Grid item xs={12} sm={8} md={5} component={Paper} elevation={6} square>
-        {isSignInVisible ? <SignInSide /> : <SignUp />}
+        {isSignInVisible ? (
+          <SignIn onTokenUpdate={onTokenUpdate} />
+        ) : (
+          <SignUp
+            onTokenUpdate={onTokenUpdate}
+            showSignIn={setIsSignInVisible}
+          />
+        )}
         <Grid container>
           <Grid item xs>
             <Link href="#" variant="body2">
@@ -54,7 +61,9 @@ export default function MainPage() {
           </Grid>
           <Grid item>
             <Button onClick={() => setIsSignInVisible(!isSignInVisible)}>
-              {"Don't have an account? Sign Up"}
+              {isSignInVisible
+                ? "Don't have an account? Sign Up"
+                : "Already a user? Sign In"}
             </Button>
           </Grid>
         </Grid>

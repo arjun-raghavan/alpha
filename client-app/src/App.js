@@ -1,12 +1,19 @@
-import React, { Fragment } from "react";
+import React, { Fragment, useState } from "react";
 import CssBaseline from "@material-ui/core/CssBaseline";
-import MainPage from "./features/mainPage";
+import Login from "./features/login";
+import DashBoard from "./features/dashboard";
 
 function App() {
+  const [token, setToken] = useState("");
+
+  function handleTokenChange(token) {
+    setToken(token);
+  }
+
   return (
     <Fragment>
       <CssBaseline />
-      <MainPage />
+      {token ? <DashBoard /> : <Login onTokenUpdate={handleTokenChange} />}
     </Fragment>
   );
 }

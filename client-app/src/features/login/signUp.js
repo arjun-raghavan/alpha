@@ -1,15 +1,14 @@
-import React from "react";
+import React, { useState } from "react";
 import Avatar from "@material-ui/core/Avatar";
 import Button from "@material-ui/core/Button";
 import TextField from "@material-ui/core/TextField";
 import FormControlLabel from "@material-ui/core/FormControlLabel";
 import Checkbox from "@material-ui/core/Checkbox";
-import Link from "@material-ui/core/Link";
 import Grid from "@material-ui/core/Grid";
 import LockOutlinedIcon from "@material-ui/icons/LockOutlined";
-import Paper from "@material-ui/core/Paper";
 import Typography from "@material-ui/core/Typography";
 import { makeStyles } from "@material-ui/core/styles";
+import axios from "axios";
 
 const useStyles = makeStyles(theme => ({
   "@global": {
@@ -39,8 +38,54 @@ const useStyles = makeStyles(theme => ({
   }
 }));
 
-export default function SignUp() {
+const signUpRequest = async (username, password, name, email, showSignIn) => {
+  // Call fetch as usual
+  try {
+    const res = await axios.post("http://localhost:8080/api/signup", {
+      username,
+      password,
+      name,
+      email
+    });
+    console.log("response-------->", res);
+    if (res.status === 201) {
+      alert("registered successfully");
+      showSignIn(true);
+    }
+    // setRes(res.data.token);
+  } catch (error) {
+    console.error(error);
+  }
+};
+
+export default function SignUp({ onTokenUpdate, showSignIn }) {
   const classes = useStyles();
+
+  const [firstName, setFirstName] = useState("");
+  const [userName, setUserName] = useState("");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+
+  function updateFirstName(event) {
+    setFirstName(event.target.value);
+  }
+
+  function updateUserName(event) {
+    setUserName(event.target.value);
+  }
+
+  function updatePassword(event) {
+    setPassword(event.target.value);
+  }
+
+  function updateEmail(event) {
+    setEmail(event.target.value);
+  }
+
+  function handleResponse(event) {
+    event.preventDefault();
+    signUpRequest(userName, password, firstName, email, showSignIn);
+  }
 
   return (
     <div className={classes.paper}>
@@ -50,18 +95,20 @@ export default function SignUp() {
       <Typography component="h1" variant="h5">
         Sign up
       </Typography>
-      <form className={classes.form} noValidate>
+      <form className={classes.form} onSubmit={handleResponse}>
         {/* <Grid container spacing={2}>*/}
         <Grid item xs={12} sm={6}>
           <TextField
-            autoComplete="fname"
-            name="firstName"
             variant="outlined"
             required
             fullWidth
             id="firstName"
             label="First Name"
+            name="firstName"
             autoFocus
+            autoComplete="fname"
+            value={firstName}
+            onChange={updateFirstName}
           />
         </Grid>
         <Grid item xs={12} sm={6}>
@@ -69,10 +116,12 @@ export default function SignUp() {
             variant="outlined"
             required
             fullWidth
-            id="lastName"
-            label="Last Name"
-            name="lastName"
-            autoComplete="lname"
+            id="userName"
+            label="User Name"
+            name="userName"
+            autoComplete="Uname"
+            value={userName}
+            onChange={updateUserName}
           />
         </Grid>
         <Grid item xs={12}>
@@ -84,6 +133,8 @@ export default function SignUp() {
             label="Email Address"
             name="email"
             autoComplete="email"
+            value={email}
+            onChange={updateEmail}
           />
         </Grid>
         <Grid item xs={12}>
@@ -96,6 +147,8 @@ export default function SignUp() {
             type="password"
             id="password"
             autoComplete="current-password"
+            value={password}
+            onChange={updatePassword}
           />
         </Grid>
         <Grid item xs={12}>
@@ -106,8 +159,8 @@ export default function SignUp() {
         </Grid>
         {/*</Grid> */}
         <Button
-          type="submit"
           fullWidth
+          type="submit"
           variant="contained"
           color="primary"
           className={classes.submit}

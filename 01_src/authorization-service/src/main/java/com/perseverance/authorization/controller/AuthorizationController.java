@@ -20,6 +20,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.CrossOrigin;
 
 import com.perseverance.authorization.auth.JwtTokenUtil;
 import com.perseverance.authorization.payload.JwtResponse;
@@ -32,6 +33,7 @@ import com.perseverance.authorization.service.UserService;
  */
 @RestController
 @RequestMapping("/api")
+@CrossOrigin(origins = "http://localhost:3000")
 public class AuthorizationController {
 
 	@Autowired
