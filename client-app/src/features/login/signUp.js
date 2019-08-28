@@ -42,7 +42,7 @@ const useStyles = makeStyles(theme => ({
   }
 }));
 
-const signUpRequest = async (username, password, name, email, showSignIn) => {
+const signUpRequest = async (username, password, name, email, history) => {
   try {
     const res = await axios.post("http://localhost:8080/api/signup", {
       username,
@@ -52,14 +52,14 @@ const signUpRequest = async (username, password, name, email, showSignIn) => {
     });
     if (res.status === 201) {
       alert("registered successfully");
-      showSignIn(true);
+      history.push("/login");
     }
   } catch (error) {
     console.error(error);
   }
 };
 
-export default function SignUp({ onTokenUpdate, showSignIn }) {
+export default function SignUp({ history }) {
   const classes = useStyles();
 
   const [firstName, setFirstName] = useState("");
@@ -85,7 +85,7 @@ export default function SignUp({ onTokenUpdate, showSignIn }) {
 
   function handleResponse(event) {
     event.preventDefault();
-    signUpRequest(userName, password, firstName, email, showSignIn);
+    signUpRequest(userName, password, firstName, email, history);
   }
 
   return (

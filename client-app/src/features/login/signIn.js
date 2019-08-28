@@ -41,7 +41,6 @@ const signInRequest = async (username, password, history) => {
       username,
       password
     });
-    console.log("response-------->", res);
     if (200 === res.status) {
       history.push("/dashboard");
     }
