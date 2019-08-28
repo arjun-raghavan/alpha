@@ -3,7 +3,7 @@ import React, { Fragment } from "react";
 function DashBoard() {
   return (
     <Fragment>
-      <h1>സ്വാഗതം....</h1>
+      <h1>ഹാപ്പി ഓണം!!!</h1>
     </Fragment>
   );
 }
