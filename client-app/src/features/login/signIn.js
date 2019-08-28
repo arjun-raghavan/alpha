@@ -35,7 +35,7 @@ const useStyles = makeStyles(theme => ({
   }
 }));
 
-const signInRequest = async (username, password, onTokenUpdate) => {
+const signInRequest = async (username, password, history) => {
   try {
     const res = await axios.post("http://localhost:8080/api/signin", {
       username,
@@ -43,14 +43,14 @@ const signInRequest = async (username, password, onTokenUpdate) => {
     });
     console.log("response-------->", res);
     if (200 === res.status) {
-      onTokenUpdate(res.data.token);
+      history.push("/dashboard");
     }
   } catch (error) {
     console.error(error);
   }
 };
 
-export default function SignIn({ onTokenUpdate }) {
+export default function SignIn({ history }) {
   const classes = useStyles();
   const [userName, setUserName] = useState("");
   const [password, setPassword] = useState("");
@@ -65,7 +65,7 @@ export default function SignIn({ onTokenUpdate }) {
 
   function handleResponse(event) {
     event.preventDefault();
-    signInRequest(userName, password, onTokenUpdate);
+    signInRequest(userName, password, history);
   }
 
   return (
