@@ -4,6 +4,7 @@ import Button from "@material-ui/core/Button";
 import TextField from "@material-ui/core/TextField";
 import FormControlLabel from "@material-ui/core/FormControlLabel";
 import Checkbox from "@material-ui/core/Checkbox";
+import { Link } from "react-router-dom";
 import Grid from "@material-ui/core/Grid";
 import LockOutlinedIcon from "@material-ui/icons/LockOutlined";
 import Typography from "@material-ui/core/Typography";
@@ -17,10 +18,10 @@ const useStyles = makeStyles(theme => ({
     }
   },
   root: {
-    height: "100vh"
+    height: "100%"
   },
   paper: {
-    marginTop: theme.spacing(8, 4),
+    margin: theme.spacing(8, 4),
     display: "flex",
     flexDirection: "column",
     alignItems: "center"
@@ -33,13 +34,15 @@ const useStyles = makeStyles(theme => ({
     width: "100%", // Fix IE 11 issue.
     marginTop: theme.spacing(3)
   },
+  margin: {
+    margin: theme.spacing(1, 0)
+  },
   submit: {
     margin: theme.spacing(3, 0, 2)
   }
 }));
 
 const signUpRequest = async (username, password, name, email, showSignIn) => {
-  // Call fetch as usual
   try {
     const res = await axios.post("http://localhost:8080/api/signup", {
       username,
@@ -47,12 +50,10 @@ const signUpRequest = async (username, password, name, email, showSignIn) => {
       name,
       email
     });
-    console.log("response-------->", res);
     if (res.status === 201) {
       alert("registered successfully");
       showSignIn(true);
     }
-    // setRes(res.data.token);
   } catch (error) {
     console.error(error);
   }
@@ -96,8 +97,7 @@ export default function SignUp({ onTokenUpdate, showSignIn }) {
         Sign up
       </Typography>
       <form className={classes.form} onSubmit={handleResponse}>
-        {/* <Grid container spacing={2}>*/}
-        <Grid item xs={12} sm={6}>
+        <Grid spacing={2}>
           <TextField
             variant="outlined"
             required
@@ -109,9 +109,8 @@ export default function SignUp({ onTokenUpdate, showSignIn }) {
             autoComplete="fname"
             value={firstName}
             onChange={updateFirstName}
+            className={classes.margin}
           />
-        </Grid>
-        <Grid item xs={12} sm={6}>
           <TextField
             variant="outlined"
             required
@@ -122,9 +121,8 @@ export default function SignUp({ onTokenUpdate, showSignIn }) {
             autoComplete="Uname"
             value={userName}
             onChange={updateUserName}
+            className={classes.margin}
           />
-        </Grid>
-        <Grid item xs={12}>
           <TextField
             variant="outlined"
             required
@@ -135,9 +133,8 @@ export default function SignUp({ onTokenUpdate, showSignIn }) {
             autoComplete="email"
             value={email}
             onChange={updateEmail}
+            className={classes.margin}
           />
-        </Grid>
-        <Grid item xs={12}>
           <TextField
             variant="outlined"
             required
@@ -149,15 +146,13 @@ export default function SignUp({ onTokenUpdate, showSignIn }) {
             autoComplete="current-password"
             value={password}
             onChange={updatePassword}
+            className={classes.margin}
           />
-        </Grid>
-        <Grid item xs={12}>
           <FormControlLabel
             control={<Checkbox value="allowExtraEmails" color="primary" />}
             label="I want to receive inspiration, marketing promotions and updates via email."
           />
         </Grid>
-        {/*</Grid> */}
         <Button
           fullWidth
           type="submit"
@@ -168,6 +163,13 @@ export default function SignUp({ onTokenUpdate, showSignIn }) {
           Sign Up
         </Button>
       </form>
+      <Grid container>
+        <Grid item>
+          <Link component={SignUp} to="/login">
+            Already have an Account ? Sign In
+          </Link>
+        </Grid>
+      </Grid>
     </div>
   );
 }
