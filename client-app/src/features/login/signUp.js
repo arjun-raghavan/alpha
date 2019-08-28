@@ -20,7 +20,7 @@ const useStyles = makeStyles(theme => ({
     height: "100vh"
   },
   paper: {
-    marginTop: theme.spacing(8, 4),
+    margin: theme.spacing(8, 4),
     display: "flex",
     flexDirection: "column",
     alignItems: "center"
@@ -32,6 +32,9 @@ const useStyles = makeStyles(theme => ({
   form: {
     width: "100%", // Fix IE 11 issue.
     marginTop: theme.spacing(3)
+  },
+  margin: {
+    margin: theme.spacing(1, 0)
   },
   submit: {
     margin: theme.spacing(3, 0, 2)
@@ -96,8 +99,7 @@ export default function SignUp({ onTokenUpdate, showSignIn }) {
         Sign up
       </Typography>
       <form className={classes.form} onSubmit={handleResponse}>
-        {/* <Grid container spacing={2}>*/}
-        <Grid item xs={12} sm={6}>
+        <Grid spacing={2}>
           <TextField
             variant="outlined"
             required
@@ -109,9 +111,8 @@ export default function SignUp({ onTokenUpdate, showSignIn }) {
             autoComplete="fname"
             value={firstName}
             onChange={updateFirstName}
+            className={classes.margin}
           />
-        </Grid>
-        <Grid item xs={12} sm={6}>
           <TextField
             variant="outlined"
             required
@@ -122,9 +123,8 @@ export default function SignUp({ onTokenUpdate, showSignIn }) {
             autoComplete="Uname"
             value={userName}
             onChange={updateUserName}
+            className={classes.margin}
           />
-        </Grid>
-        <Grid item xs={12}>
           <TextField
             variant="outlined"
             required
@@ -135,9 +135,8 @@ export default function SignUp({ onTokenUpdate, showSignIn }) {
             autoComplete="email"
             value={email}
             onChange={updateEmail}
+            className={classes.margin}
           />
-        </Grid>
-        <Grid item xs={12}>
           <TextField
             variant="outlined"
             required
@@ -149,15 +148,13 @@ export default function SignUp({ onTokenUpdate, showSignIn }) {
             autoComplete="current-password"
             value={password}
             onChange={updatePassword}
+            className={classes.margin}
           />
-        </Grid>
-        <Grid item xs={12}>
           <FormControlLabel
             control={<Checkbox value="allowExtraEmails" color="primary" />}
             label="I want to receive inspiration, marketing promotions and updates via email."
           />
         </Grid>
-        {/*</Grid> */}
         <Button
           fullWidth
           type="submit"
