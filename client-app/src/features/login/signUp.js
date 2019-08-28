@@ -4,6 +4,7 @@ import Button from "@material-ui/core/Button";
 import TextField from "@material-ui/core/TextField";
 import FormControlLabel from "@material-ui/core/FormControlLabel";
 import Checkbox from "@material-ui/core/Checkbox";
+import { Link } from "react-router-dom";
 import Grid from "@material-ui/core/Grid";
 import LockOutlinedIcon from "@material-ui/icons/LockOutlined";
 import Typography from "@material-ui/core/Typography";
@@ -17,7 +18,7 @@ const useStyles = makeStyles(theme => ({
     }
   },
   root: {
-    height: "100vh"
+    height: "100%"
   },
   paper: {
     margin: theme.spacing(8, 4),
@@ -42,7 +43,6 @@ const useStyles = makeStyles(theme => ({
 }));
 
 const signUpRequest = async (username, password, name, email, showSignIn) => {
-  // Call fetch as usual
   try {
     const res = await axios.post("http://localhost:8080/api/signup", {
       username,
@@ -50,12 +50,10 @@ const signUpRequest = async (username, password, name, email, showSignIn) => {
       name,
       email
     });
-    console.log("response-------->", res);
     if (res.status === 201) {
       alert("registered successfully");
       showSignIn(true);
     }
-    // setRes(res.data.token);
   } catch (error) {
     console.error(error);
   }
@@ -165,6 +163,13 @@ export default function SignUp({ onTokenUpdate, showSignIn }) {
           Sign Up
         </Button>
       </form>
+      <Grid container>
+        <Grid item>
+          <Link component={SignUp} to="/login">
+            Already have an Account ? Sign In
+          </Link>
+        </Grid>
+      </Grid>
     </div>
   );
 }

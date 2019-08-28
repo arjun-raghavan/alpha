@@ -4,14 +4,17 @@ import Button from "@material-ui/core/Button";
 import TextField from "@material-ui/core/TextField";
 import FormControlLabel from "@material-ui/core/FormControlLabel";
 import Checkbox from "@material-ui/core/Checkbox";
+import { Link } from "react-router-dom";
 import LockOutlinedIcon from "@material-ui/icons/LockOutlined";
 import Typography from "@material-ui/core/Typography";
 import { makeStyles } from "@material-ui/core/styles";
+import Grid from "@material-ui/core/Grid";
 import axios from "axios";
+import SignUp from "./signUp";
 
 const useStyles = makeStyles(theme => ({
   root: {
-    height: "100vh"
+    height: "100%"
   },
   paper: {
     margin: theme.spacing(8, 4),
@@ -33,7 +36,6 @@ const useStyles = makeStyles(theme => ({
 }));
 
 const signInRequest = async (username, password, onTokenUpdate) => {
-  // Call fetch as usual
   try {
     const res = await axios.post("http://localhost:8080/api/signin", {
       username,
@@ -43,7 +45,6 @@ const signInRequest = async (username, password, onTokenUpdate) => {
     if (200 === res.status) {
       onTokenUpdate(res.data.token);
     }
-    // setRes(res.data.token);
   } catch (error) {
     console.error(error);
   }
@@ -117,6 +118,18 @@ export default function SignIn({ onTokenUpdate }) {
             Sign In
           </Button>
         </form>
+        <Grid container>
+          <Grid item xs>
+            <Link href="#" variant="body2">
+              Forgot password?
+            </Link>
+          </Grid>
+          <Grid item>
+            <Link component={SignUp} to="/register">
+              Don't have an account? Sign Up
+            </Link>
+          </Grid>
+        </Grid>
       </div>
     </Fragment>
   );
